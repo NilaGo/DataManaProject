@@ -273,6 +273,8 @@ We could ask ourselves if there is a reverse causality: is it the share of femal
 
 To assess potential shifts in policy orientation towards social justice and equality rather than economic growth and military spending , we will first assess the link between the **Military Expenditure (% of GDP)** and the proportion of women in parliaments to see whether women are more or concerned by defense matters. Then, we're going to analyse the link between women in parliaments and social justice by focusing on the correlations with the Gini coefficient to assess whether more gender representation in parliaments would favor more policies reducing inequalities .
 
+### Impact of the share of women parliamentarians on Military Spending.
+
 # Conclusion
 
 rappeler nos conclusions sur les tests etc comparer gdi et hdi pour amener l'idee du japon (faire graph) les femmes changent pas grand chose = pas de raison d'etre reticent envers le fait d'avoir des femmes qui votent les lois = femmes et hommes c'est pareil plutot relie a la culture = donner l'exemple du Japon VS latin America
