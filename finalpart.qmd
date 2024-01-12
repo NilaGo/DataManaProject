@@ -275,6 +275,24 @@ To assess potential shifts in policy orientation towards social justice and equa
 
 ### Impact of the share of women parliamentarians on Military Spending.
 
+```{r}
+dataset |>
+  ggplot(aes(x = `Proportion of seats held by women in national parliaments (%)`,
+             y = `Military expenditure (% of GDP)`)) +
+  geom_point() +
+  geom_smooth(method = "lm", se = FALSE, color = "red") +
+  labs(title = "Relationship between Women in Parliaments and Military Expenditure",
+       x = "Proportion of seats held by women in national parliaments (%)",
+       y = "Military expenditure (% of GDP)") +
+  theme_minimal()
+```
+
+The correlation matrix suggests that that there is a weak negative correlation between Military Spending and Women in Parliaments , which is also illustrated the scatter plot. Thus , we can deduce that there is not a significant relationship between Military Spending and the proportion of seats held by women in national parliaments according to our dataset.
+
+### Impact of the share of women parliamentarians on inequalities.
+
+The correlation coefficient between the proportion of seats of women
+
 # Conclusion
 
 rappeler nos conclusions sur les tests etc comparer gdi et hdi pour amener l'idee du japon (faire graph) les femmes changent pas grand chose = pas de raison d'etre reticent envers le fait d'avoir des femmes qui votent les lois = femmes et hommes c'est pareil plutot relie a la culture = donner l'exemple du Japon VS latin America
