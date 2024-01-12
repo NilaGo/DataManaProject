@@ -295,6 +295,39 @@ The correlation coefficient between the proportion of seats of women is close to
 
 From this analysis , we can deduce that more representation of women in national parliaments does not significantly entails more public policies favoring social justice and equality or national defense.
 
+## Women in Parliaments and environmental policies 
+
+This section will focus on the impact of more women in legislative institutions on environmental policies by highlighting the correlation between the proportion of seats held by women in national parliament and the PHDI , which we chose as an indicator for the environmental performance of a country . The correlation matrix suggest that the Planetary Pressures- Adjusted Human Development Index and HDI are highly correlated , thus we expect similar conclusions.
+
+### Impact of the share of women parliamentarians on the PHDI
+
+```{r}
+dataset %>%
+  ggplot(aes(x = `Proportion of seats held by women in national parliaments (%)`, y = PHDI)) +
+  geom_point() +
+  geom_smooth(method = "lm", se = FALSE, color = "darkgreen") +
+  labs(title = "Relationship between Women in Parliament and PHDI",
+       x = "Proportion of seats held by women in national parliaments (%)",
+       y = "PHDI") +
+  theme_minimal()
+```
+
+The correlation coefficient between the proportion of seats held by women in national parliaments and the PHDI (0.230) and the scatter plot suggest there is a positive correlation between women parliamentarians and the PHDI.
+
+To assess whether there is causality , we will perform a linear regression to asses the impact of women parliamentarians on the PHDI. However , we also deduced that the PHDI and the HDI are highly correlated ,thus the HDI value was also added to our regression .Indeed , countries with higher standards of living might be more conscious towards environmental issues. Hence ; the HDI might be another variables that drives the PHDI.
+
+```{r}
+model3 <- lm(data= dataset, `PHDI`~`Proportion of seats held by women in national parliaments (%)`)
+tidy_model3 <- tidy(model3)
+kable(tidy_model3, caption = "Simple Linear Regression Results")
+
+model4 <-lm(data= dataset, `PHDI`~`Proportion of seats held by women in national parliaments (%)`+ HDI_val)
+tidy_model4 <- tidy(model4)
+kable(tidy_model4, caption = "Simple Linear Regression Results")
+```
+
+The regression suggests ...
+
 # Conclusion
 
 rappeler nos conclusions sur les tests etc comparer gdi et hdi pour amener l'idee du japon (faire graph) les femmes changent pas grand chose = pas de raison d'etre reticent envers le fait d'avoir des femmes qui votent les lois = femmes et hommes c'est pareil plutot relie a la culture = donner l'exemple du Japon VS latin America
