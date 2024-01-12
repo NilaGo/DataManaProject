@@ -291,7 +291,9 @@ The correlation matrix suggests that that there is a weak negative correlation b
 
 ### Impact of the share of women parliamentarians on inequalities.
 
-The correlation coefficient between the proportion of seats of women
+The correlation coefficient between the proportion of seats of women is close to 0 (-0.026) according to the correlation matrix. Thus, we can deduce that there is no significant relationship between the Gini index and the share of women parliaments at the national level.
+
+From this analysis , we can deduce that more representation of women in national parliaments does not significantly entails more public policies favoring social justice and equality or national defense.
 
 # Conclusion
 
