@@ -18,7 +18,7 @@ We will use one dataset that contains the variables that we want to study and so
 
 ```{r}
 #| message: FALSE
-here::i_am("project.final.Rproj")
+here::i_am("Project.Rproj")
 library(here)
 library(vroom) 
 library(dplyr)
@@ -163,8 +163,10 @@ To try to go deeper, we will study the correlation matrix between our variables.
 
 ```{r}
 options(digits = 3)
-cor(dataset[, 5:14])|> knitr::kable(caption = "Correlation matrix") |> kable_styling(font_size = 14, fixed_thead = TRUE, full_width = FALSE, position = "left", bootstrap_options = "striped", stripe_color = "lightgray") |>
-  scroll_box(height = "500px")
+# cor(dataset[, 5:14])|> knitr::kable(caption = "Correlation matrix") |> kable_styling(font_size = 14, fixed_thead = TRUE, full_width = FALSE, position = "left", bootstrap_options = "striped")
+cormat <- cor(dataset[, 5:14])
+knitr::kable(cormat)
+
 ```
 
 The correlation matrix gives us a general idea about relationships between our target variable (share of women in Parliaments) and the other variables. We can see that the variables that are more correlated (positively) with the share of women in national parliaments are the Women Business and Law Index Score, the GDI, the HDI and the PHDI. We also see that the HDI and the PHDI are strongly positively correlated which we will have to take into account later in our analysis.
@@ -185,7 +187,8 @@ ggplot(dataset, aes(x= `Proportion of seats held by women in national parliament
   ylab("GDP annual growth rate(%)")+
   ggtitle("The impact of the share of female parliamentarians on the GDP annual growth rate in 2021")+
   geom_point()+
-  geom_smooth(method = "lm", color = "light blue", se= FALSE)
+  geom_smooth(method = "lm", se = FALSE, aes(color = "Regression Line"))+
+  scale_color_manual(values = "light blue")
 ```
 
 Based on the plot and the regression line, it seems that there is a slight positive correlation between the share of female parliamentarians and the GDP annual growth rate. However, the points are scaterred: the GDP annual growth rate vary a lot for the same level of share of female parliamentarians.
@@ -198,7 +201,8 @@ ggplot(dataset, aes(x= `Proportion of seats held by women in national parliament
   ylab("HDI")+
   ggtitle("The impact of the share of female parliamentarians on the HDI in 2021")+
   geom_point()+
-  geom_smooth(method = "lm", color = "pink", se= FALSE)
+  geom_smooth(method = "lm", se = FALSE, aes(color = "Regression Line"))+
+  scale_color_manual(values = "light pink")
 ```
 
 Again, we observe a lot of disparity between the points. For the same level of share of female parliamentarians we have countries that have a high HDI value and countries that have a low HDI value. Since the share of female parliamentarians is more correlated with the HDI than with the GDP annual growth rate, we will further the analysis of the relationship between the share of female parliamentarians and the HDI. We can do a t-test to see if our variable has a significant impact on the HDI.
