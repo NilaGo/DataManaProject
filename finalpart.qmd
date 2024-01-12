@@ -1,0 +1,8 @@
+---
+title: "Final part"
+format: pdf
+wordcount-pdf: default
+editor: visual
+author: Gobiraj Nila & Damiche Inès
+echo: false
+---
