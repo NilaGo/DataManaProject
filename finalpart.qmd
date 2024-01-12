@@ -140,7 +140,18 @@ dataset |>
   coord_flip()
 ```
 
-We see that the average share of female Parliamentarians is lower in East Asia & Pacific than in Sub-Saharan Africa whereas most of Sub-Saharan countries have a lower income than East Asia & Pacific. Thus, we could think that national income and share of female parliamentarians are not really related. However, we also observe that for almost all the regions, the share of female parliamentarians vary a lot within the region. The exception is North America where we see that we have a spike around 30%. We know North America is mostly composed of high income countries whereas in other regions the level of development can vary a lot from a country to another. This can lead us to think that for countries that are part of the same income group the proportion of seats held by women in national parliament would not vary a lot so that is what we are going to see now.
+The average proportion of seats held by women in national parliaments is the highest in Latin America & Caribbeean region followed by European & Central Asia . The lowest share of women parliaments is in the East Asian & Pacific region and South Asia.
+
+The difference might be driven by the level of economic development in this region. Thus, we will further our analysis by looking at the distribution of income groups within those regions.
+
+```{r}
+dataset %>%
+  ggplot(aes(x = `Income Group`,fill=`Income Group`)) +
+  geom_bar()+
+  facet_wrap(~Region)
+```
+
+We see that the average share of female Parliamentarians is lower in East Asia & Pacific than in Sub-Saharan Africa whereas most of Sub-Saharan countries have a lower income than East Asia & Pacific countries . Thus, we could think that national income and share of female parliamentarians are not really related. However, we also observe that for almost all the regions, the share of female parliamentarians vary a lot within the region. The exception is North America where we see that we have a spike around 30%. We know North America is mostly composed of high income countries whereas in other regions the level of development can vary a lot from a country to another. This can lead us to think that for countries that are part of the same income group the proportion of seats held by women in national parliament would not vary a lot so that is what we are going to see now.
 
 **Distribution conditioned on the Income Group**
 
@@ -160,6 +171,13 @@ dataset |>
   group_by(`Income Group`)|>
   summarise(mean= mean(`Proportion of seats held by women in national parliaments (%)`))|>
   knitr::kable()
+
+dataset |>
+  group_by(`Income Group`) |>
+  summarise(mean = mean(`Proportion of seats held by women in national parliaments (%)`))|>
+  ggplot(aes(x = `Income Group`, y = mean,fill=`Income Group`)) +
+  geom_col()
+
 ```
 
 Thanks to the plots, we can clearly see that the proportion of female parliamentarians vary within the countries that are part of the same income group. We also see that higher income countries have a higher average share of women parliamentarians than the others but the difference is not huge. Also, we see that low income countries have more female parliamentarians than lower middle income countries.
@@ -250,6 +268,10 @@ kable(tidy_model2, caption = "Simple Linear Regression Results")
 According to our results, the share of female parliamentarians is significant to explain the Women Business and the Law score index at a significance level of 1%.
 
 We could ask ourselves if there is a reverse causality: is it the share of female parliamentarians that influence the Women Business and the Law score index or is it the opposite ? As we said earlier, the Women Business and the Law score index takes into account 9 indices: Mobility, Workplace, Pay, Marriage, Parenthood, Entrepreneurship, Assets and Pension. Some of this indices can influence women's empowerment and inclusion the political sphere. Therefore, we cannot assess the causality efficiently between the share of female parliamentarians and the Women Business and the Law score Index.
+
+## Women in Parliaments and policies favoring social justice
+
+To assess potential shifts in policy orientation towards social justice and equality rather than economic growth and military spending , we will first assess the link between the **Military Expenditure (% of GDP)** and the proportion of women in parliaments to see whether women are more or concerned by defense matters. Then, we're going to analyse the link between women in parliaments and social justice by focusing on the correlations with the Gini coefficient to assess whether more gender representation in parliaments would favor more policies reducing inequalities .
 
 # Conclusion
 
