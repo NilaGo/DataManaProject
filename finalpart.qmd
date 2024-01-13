@@ -128,11 +128,6 @@ dataset |>
 
 ```{r}
 dataset |>
-  group_by(Region)|>
-  summarise(mean= mean(`Proportion of seats held by women in national parliaments (%)`))|>
-  knitr::kable()
-
-dataset |>
   group_by(Region) |>
   summarise(mean = mean(`Proportion of seats held by women in national parliaments (%)`))|>
   ggplot(aes(x = `Region`, y = mean,fill=Region)) +
@@ -168,11 +163,6 @@ dataset |>
 
 ```{r}
 dataset |>
-  group_by(`Income Group`)|>
-  summarise(mean= mean(`Proportion of seats held by women in national parliaments (%)`))|>
-  knitr::kable()
-
-dataset |>
   group_by(`Income Group`) |>
   summarise(mean = mean(`Proportion of seats held by women in national parliaments (%)`))|>
   ggplot(aes(x = `Income Group`, y = mean,fill=`Income Group`)) +
@@ -190,9 +180,9 @@ To try to go deeper, we will study the correlation matrix between our variables.
 
 ```{r}
 options(digits = 3)
-# cor(dataset[, 5:14])|> knitr::kable(caption = "Correlation matrix") |> kable_styling(font_size = 14, fixed_thead = TRUE, full_width = FALSE, position = "left", bootstrap_options = "striped")
-cormat <- cor(dataset[, 5:14])
-knitr::kable(cormat)
+cor(dataset[, 5:14])|> knitr::kable(caption = "Correlation matrix") |> kable_styling(font_size = 13, fixed_thead = TRUE, full_width = TRUE, position = "left", bootstrap_options = "striped")
+#cormat <- cor(dataset[, 5:14])
+#knitr::kable(cormat)
 
 ```
 
@@ -237,14 +227,14 @@ Again, we observe a lot of disparity between the points. For the same level of s
 ```{r}
 model1 <- lm(data= dataset, `HDI_val`~`Proportion of seats held by women in national parliaments (%)`)
 tidy_model <- tidy(model1)
-kable(tidy_model, caption = "Simple Linear Regression Results")
+kable(tidy_model, caption = "Linear Regression Results")
 ```
 
 At a significance level of 5%, the variable "Proportion of seats held by women in national parliaments (%)" is significant. At a significance level of 1%, the variable "Proportion of seats held by women in national parliaments (%)" is not significant.
 
 ## Does female parliamentarians support women's status?
 
-Now, we want to see if women that have the legislative power tend to favor women's conditions in the society. To illustrate that, we are going to study the impact of the share of female parliamentarians on the Women Business and the Law Index Score because we saw in the correlation matrix that these two variables had a higher correlation coefficient. We also could have used the female participation rate but the correlation coefficient is not really high so a further analysis will not be really useful.
+Now, we want to see if women that have the legislative power tend to favour women's conditions in the society. To illustrate that, we are going to study the impact of the share of female parliamentarians on the Women Business and the Law Index Score because we saw in the correlation matrix that these two variables had a higher correlation coefficient. We also could have used the female participation rate but the correlation coefficient is not really high so a further analysis will not be really useful.
 
 ### Women Business and the Law Index Score Scale
 
@@ -262,7 +252,7 @@ It seems that the relationship between the two variables have a positive relatio
 ```{r}
 model2 <- lm(data= dataset, `Women Business and the Law Index Score (scale 1-100)`~`Proportion of seats held by women in national parliaments (%)`)
 tidy_model2 <- tidy(model2)
-kable(tidy_model2, caption = "Simple Linear Regression Results")
+kable(tidy_model2, caption = "Linear Regression Results")
 ```
 
 According to our results, the share of female parliamentarians is significant to explain the Women Business and the Law score index at a significance level of 1%.
@@ -319,17 +309,25 @@ To assess whether there is causality , we will perform a linear regression to as
 ```{r}
 model3 <- lm(data= dataset, `PHDI`~`Proportion of seats held by women in national parliaments (%)`)
 tidy_model3 <- tidy(model3)
-kable(tidy_model3, caption = "Simple Linear Regression Results")
+kable(tidy_model3, caption = "Linear Regression Results")
 
 model4 <-lm(data= dataset, `PHDI`~`Proportion of seats held by women in national parliaments (%)`+ HDI_val)
 tidy_model4 <- tidy(model4)
-kable(tidy_model4, caption = "Simple Linear Regression Results")
+kable(tidy_model4, caption = "Linear Regression Results")
 ```
 
 The regression suggests ...
 
 # Conclusion
+In conclusion, according to our results, female parliamentarians do not seem to have a significant impact on the development of a country and on most of the governmental policies. It is often said that women concentrate more on social and environmental policies because they are more "emotional" but this does not seem to be true or at least there is no evident relationship between these variables. The only "social" variable that seems to be impacted by the share of female parliamentarians is the Women and Business Law Index Score which measures how laws and regulations affect women's economic opportunity. Thus, female parliamentarians have a positive impact on some of the women's conditions but this result has to be hold with a grain of salt since we may have a reverse causality: positive women's conditions can favor the access to political functions for women. Furthermore, our results show us that the national budget reserved to the military expenditure is slightly negatively impacted by the share of female parliamentarians. This means female legislators do not really impact the military spending either. 
 
-rappeler nos conclusions sur les tests etc comparer gdi et hdi pour amener l'idee du japon (faire graph) les femmes changent pas grand chose = pas de raison d'etre reticent envers le fait d'avoir des femmes qui votent les lois = femmes et hommes c'est pareil plutot relie a la culture = donner l'exemple du Japon VS latin America
+Based on our results we can make two major general conclusions. On one hand, we can reject the general opinion according to which women legislators favour social and environmental issues. On the other hand, since the gender of the parliamentarians does not have a significant impact on government policies  there is no reason to reject the presence of women in the legislative body.  
+If it is really the case, why are there still countries that have a low share of female parliamentarians ? We saw that the share of female legislators does not depend on the income group, the disparities are more present between the different regions. 
+
+#JE PENSE QU'ON PEUT PAS METTRE CA PCQ DU COUP ON CHERCHE CE QUI IMPACTE LES FEMMES ALORS QUE NOTRE SUJET C'EST CE QUE LES FEMMES IMPACTENT
+As it seems that there is no evident relationship between development and the share of female parliamentarians, we will try to find comparer gdi et hdi pour amener l'idée du Japon (faire graph) les femmes changent
+culture = donner l'exemple du Japon VS latin America (comparer mean en Am latine et mean au japon)
 
 # Annex
+Github link: <https://github.com/NilaGo/DataManaProject.git>
+
