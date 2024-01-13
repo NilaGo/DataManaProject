@@ -5,8 +5,6 @@ wordcount-pdf: default
 editor: visual
 author: Gobiraj Nila & Damiche Inès
 echo: false
-output:
- self_contained: true
 ---
 
 # Research question
