@@ -128,11 +128,6 @@ dataset |>
 
 ```{r}
 dataset |>
-  group_by(Region)|>
-  summarise(mean= mean(`Proportion of seats held by women in national parliaments (%)`))|>
-  knitr::kable()
-
-dataset |>
   group_by(Region) |>
   summarise(mean = mean(`Proportion of seats held by women in national parliaments (%)`))|>
   ggplot(aes(x = `Region`, y = mean,fill=Region)) +
@@ -167,11 +162,6 @@ dataset |>
 ```
 
 ```{r}
-dataset |>
-  group_by(`Income Group`)|>
-  summarise(mean= mean(`Proportion of seats held by women in national parliaments (%)`))|>
-  knitr::kable()
-
 dataset |>
   group_by(`Income Group`) |>
   summarise(mean = mean(`Proportion of seats held by women in national parliaments (%)`))|>
