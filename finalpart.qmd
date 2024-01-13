@@ -115,7 +115,7 @@ world_mean <- mean(dataset$`Proportion of seats held by women in national parlia
 
 ```
 
-The worldwide mean share of female parliamentarians is `r world_mean`. Thus , at the world level , women occupy less than half of the seats in parliaments.
+The worldwide mean share of female parliamentarians is `r world_mean`. Thus , at the world level , women occupy less than half of the seats in parliaments on average.
 
 **Distribution conditioned on the region**
 
@@ -306,7 +306,7 @@ dataset %>%
   theme_minimal()
 ```
 
-The correlation coefficient between the proportion of seats held by women in national parliaments and the PHDI (0.230) and the scatter plot suggest there is a positive correlation between women parliamentarians and the PHDI.
+The correlation coefficient between the proportion of seats held by women in national parliaments and the PHDI (0.230) and the scatter plot suggest there is a weak positive correlation between women parliamentarians and the PHDI.
 
 To assess whether there is causality , we will perform a linear regression to asses the impact of women parliamentarians on the PHDI. The level of development of a country might also drive the PHDI since developing countries pollute more than developed ones , so we controlled for this variable with the GDP variable.
 
@@ -323,12 +323,11 @@ These results indeed suggests that there is a causality between the number of wo
 
 # Conclusion
 
-In conclusion, according to our results, female parliamentarians do not seem to have a significant impact on the development of a country and on most of the governmental policies. It is often said that women concentrate more on social and environmental policies because they are more "emotional" but this does not seem to be true or at least there is no evident relationship between these variables. The only "social" variable that seems to be impacted by the share of female parliamentarians is the Women and Business Law Index Score which measures how laws and regulations affect women's economic opportunity. Thus, female parliamentarians have a positive impact on some of the women's conditions but this result has to be hold with a grain of salt since we may have a reverse causality: positive women's conditions can favor the access to political functions for women. Furthermore, our results show us that the national budget reserved to the military expenditure is slightly negatively impacted by the share of female parliamentarians. This means female legislators do not really impact the military spending either.
+In conclusion, according to our results, female parliamentarians do not seem to have a significant impact on the development of a country and on most of the governmental policies (the impact seems to be weak). It is often said that women concentrate more on social and environmental policies because they are more "emotional" but this does not seem to be true or at least there is no evident relationship between these variables. The only "social" variable that seems to be really impacted by the share of female parliamentarians is the Women and Business Law Index Score which measures how laws and regulations affect women's economic opportunity. Thus, female parliamentarians can have a positive impact on women's conditions but this result has to be hold with a grain of salt since we may have a reverse causality: positive women's conditions can favour the access to political functions for women. Furthermore, our results show us that female legislators do not impact the military spending either.
 
-Based on our results we can make two major general conclusions. On one hand, we can reject the general opinion according to which women legislators favour social and environmental issues. On the other hand, since the gender of the parliamentarians does not have a significant impact on government policies there is no reason to reject the presence of women in the legislative body.\
-If it is really the case, why are there still countries that have a low share of female parliamentarians ? We saw that the share of female legislators does not depend on the income group, the disparities are more present between the different regions.
+Based on our results we can make two major general conclusions. On one hand, we can reject the general opinion according to which women legislators favour social and environmental issues. On the other hand, since the gender of the parliamentarians does not have a significant impact on government policies there is no reason to reject the presence of women in the legislative body.
+If it is really the case, why are there still countries that have a low share of female parliamentarians ? We saw that the share of female legislators does not depend on the income group, the disparities are more present between the different regions. The share of female parliamentarians can depend on culture and other variables rather than the level of development of a country. For example, Japan is a high income country but the share of female parliamentarians is equal to 9.68% which is far below the world mean (26.53%) while Nicaragua is a Low middle income country and has a share of female parliamentarians equal to 50.5% (two times the world average). Thus, the reasons behind the amount of female parliamentarians may be specific to each country. 
 
-#JE PENSE QU'ON PEUT PAS METTRE CA PCQ DU COUP ON CHERCHE CE QUI IMPACTE LES FEMMES ALORS QUE NOTRE SUJET C'EST CE QUE LES FEMMES IMPACTENT As it seems that there is no evident relationship between development and the share of female parliamentarians, we will try to find comparer gdi et hdi pour amener l'idée du Japon (faire graph) les femmes changent culture = donner l'exemple du Japon VS latin America (comparer mean en Am latine et mean au japon)
 
 # Annex
 
