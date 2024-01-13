@@ -6,6 +6,7 @@ editor: visual
 author: Gobiraj Nila & Damiche Inès
 echo: false
 ---
+Github link: 
 # Research question
 
 rappeler que ce sont les parlementaires qui votent les lois; rappeler qu'on pourrait étudier le contraire (estce que le dev impacte les femmes ?) mais que c'est pas notre but
@@ -163,9 +164,9 @@ To try to go deeper, we will study the correlation matrix between our variables.
 
 ```{r}
 options(digits = 3)
-# cor(dataset[, 5:14])|> knitr::kable(caption = "Correlation matrix") |> kable_styling(font_size = 14, fixed_thead = TRUE, full_width = FALSE, position = "left", bootstrap_options = "striped")
-cormat <- cor(dataset[, 5:14])
-knitr::kable(cormat)
+cor(dataset[, 5:14])|> knitr::kable(caption = "Correlation matrix") |> kable_styling(font_size = 13, fixed_thead = TRUE, full_width = TRUE, position = "left", bootstrap_options = "striped")
+#cormat <- cor(dataset[, 5:14])
+#knitr::kable(cormat)
 
 ```
 
@@ -244,6 +245,12 @@ We could ask ourselves if there is a reverse causality: is it the share of femal
 
 # Conclusion
 
-rappeler nos conclusions sur les tests etc comparer gdi et hdi pour amener l'idee du japon (faire graph) les femmes changent pas grand chose = pas de raison d'etre reticent envers le fait d'avoir des femmes qui votent les lois = femmes et hommes c'est pareil plutot relie a la culture = donner l'exemple du Japon VS latin America
+rappeler nos conclusions sur les tests etc 
+pas grand chose qui change= pas de raison d'etre reticent envers le fait d'avoir des femmes qui votent les lois = femmes et hommes c'est pareil plutot relie a la
+
+As it seems that there is no evident relationship between development and the share of female parliamentarians, we will try to find 
+comparer gdi et hdi pour amener l'idée du Japon (faire graph) les femmes changent 
+
+ culture = donner l'exemple du Japon VS latin America
 
 # Annex
