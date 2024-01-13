@@ -237,7 +237,7 @@ Again, we observe a lot of disparity between the points. For the same level of s
 ```{r}
 model1 <- lm(data= dataset, `HDI_val`~`Proportion of seats held by women in national parliaments (%)`)
 tidy_model <- tidy(model1)
-kable(tidy_model, caption = "Simple Linear Regression Results")
+kable(tidy_model, caption = "Linear Regression Results")
 ```
 
 At a significance level of 5%, the variable "Proportion of seats held by women in national parliaments (%)" is significant. At a significance level of 1%, the variable "Proportion of seats held by women in national parliaments (%)" is not significant.
@@ -262,7 +262,7 @@ It seems that the relationship between the two variables have a positive relatio
 ```{r}
 model2 <- lm(data= dataset, `Women Business and the Law Index Score (scale 1-100)`~`Proportion of seats held by women in national parliaments (%)`)
 tidy_model2 <- tidy(model2)
-kable(tidy_model2, caption = "Simple Linear Regression Results")
+kable(tidy_model2, caption = "Linear Regression Results")
 ```
 
 According to our results, the share of female parliamentarians is significant to explain the Women Business and the Law score index at a significance level of 1%.
@@ -319,11 +319,11 @@ To assess whether there is causality , we will perform a linear regression to as
 ```{r}
 model3 <- lm(data= dataset, `PHDI`~`Proportion of seats held by women in national parliaments (%)`)
 tidy_model3 <- tidy(model3)
-kable(tidy_model3, caption = "Simple Linear Regression Results")
+kable(tidy_model3, caption = "Linear Regression Results")
 
 model4 <-lm(data= dataset, `PHDI`~`Proportion of seats held by women in national parliaments (%)`+ HDI_val)
 tidy_model4 <- tidy(model4)
-kable(tidy_model4, caption = "Simple Linear Regression Results")
+kable(tidy_model4, caption = "Linear Regression Results")
 ```
 
 The regression suggests ...
