@@ -5,6 +5,8 @@ wordcount-pdf: default
 editor: visual
 author: Gobiraj Nila & Damiche Inès
 echo: false
+output:
+ self_contained: true
 ---
 
 # Research question
@@ -304,30 +306,28 @@ dataset %>%
 
 The correlation coefficient between the proportion of seats held by women in national parliaments and the PHDI (0.230) and the scatter plot suggest there is a positive correlation between women parliamentarians and the PHDI.
 
-To assess whether there is causality , we will perform a linear regression to asses the impact of women parliamentarians on the PHDI. However , we also deduced that the PHDI and the HDI are highly correlated ,thus the HDI value was also added to our regression .Indeed , countries with higher standards of living might be more conscious towards environmental issues. Hence ; the HDI might be another variables that drives the PHDI.
+To assess whether there is causality , we will perform a linear regression to asses the impact of women parliamentarians on the PHDI. The level of development of a country might also drive the PHDI since developing countries pollute more than developed ones , so we controlled for this variable with the GDP variable.
 
 ```{r}
-model3 <- lm(data= dataset, `PHDI`~`Proportion of seats held by women in national parliaments (%)`)
+model3 <- lm(data= dataset, `PHDI`~`Proportion of seats held by women in national parliaments (%)` + `GDP growth (annual %)`)
 tidy_model3 <- tidy(model3)
 kable(tidy_model3, caption = "Linear Regression Results")
 
-model4 <-lm(data= dataset, `PHDI`~`Proportion of seats held by women in national parliaments (%)`+ HDI_val)
-tidy_model4 <- tidy(model4)
-kable(tidy_model4, caption = "Linear Regression Results")
 ```
 
-The regression suggests ...
+The regression suggests that both the proportion of seats held by women in national parliaments and GDP growth are significant at a 5% confidence level since their p-value is inferior to 0.05.
+
+These results indeed suggests that there is a causality between the number of women in parliaments and policies that protect the environment.
 
 # Conclusion
-In conclusion, according to our results, female parliamentarians do not seem to have a significant impact on the development of a country and on most of the governmental policies. It is often said that women concentrate more on social and environmental policies because they are more "emotional" but this does not seem to be true or at least there is no evident relationship between these variables. The only "social" variable that seems to be impacted by the share of female parliamentarians is the Women and Business Law Index Score which measures how laws and regulations affect women's economic opportunity. Thus, female parliamentarians have a positive impact on some of the women's conditions but this result has to be hold with a grain of salt since we may have a reverse causality: positive women's conditions can favor the access to political functions for women. Furthermore, our results show us that the national budget reserved to the military expenditure is slightly negatively impacted by the share of female parliamentarians. This means female legislators do not really impact the military spending either. 
 
-Based on our results we can make two major general conclusions. On one hand, we can reject the general opinion according to which women legislators favour social and environmental issues. On the other hand, since the gender of the parliamentarians does not have a significant impact on government policies  there is no reason to reject the presence of women in the legislative body.  
-If it is really the case, why are there still countries that have a low share of female parliamentarians ? We saw that the share of female legislators does not depend on the income group, the disparities are more present between the different regions. 
+In conclusion, according to our results, female parliamentarians do not seem to have a significant impact on the development of a country and on most of the governmental policies. It is often said that women concentrate more on social and environmental policies because they are more "emotional" but this does not seem to be true or at least there is no evident relationship between these variables. The only "social" variable that seems to be impacted by the share of female parliamentarians is the Women and Business Law Index Score which measures how laws and regulations affect women's economic opportunity. Thus, female parliamentarians have a positive impact on some of the women's conditions but this result has to be hold with a grain of salt since we may have a reverse causality: positive women's conditions can favor the access to political functions for women. Furthermore, our results show us that the national budget reserved to the military expenditure is slightly negatively impacted by the share of female parliamentarians. This means female legislators do not really impact the military spending either.
 
-#JE PENSE QU'ON PEUT PAS METTRE CA PCQ DU COUP ON CHERCHE CE QUI IMPACTE LES FEMMES ALORS QUE NOTRE SUJET C'EST CE QUE LES FEMMES IMPACTENT
-As it seems that there is no evident relationship between development and the share of female parliamentarians, we will try to find comparer gdi et hdi pour amener l'idée du Japon (faire graph) les femmes changent
-culture = donner l'exemple du Japon VS latin America (comparer mean en Am latine et mean au japon)
+Based on our results we can make two major general conclusions. On one hand, we can reject the general opinion according to which women legislators favour social and environmental issues. On the other hand, since the gender of the parliamentarians does not have a significant impact on government policies there is no reason to reject the presence of women in the legislative body.\
+If it is really the case, why are there still countries that have a low share of female parliamentarians ? We saw that the share of female legislators does not depend on the income group, the disparities are more present between the different regions.
+
+#JE PENSE QU'ON PEUT PAS METTRE CA PCQ DU COUP ON CHERCHE CE QUI IMPACTE LES FEMMES ALORS QUE NOTRE SUJET C'EST CE QUE LES FEMMES IMPACTENT As it seems that there is no evident relationship between development and the share of female parliamentarians, we will try to find comparer gdi et hdi pour amener l'idée du Japon (faire graph) les femmes changent culture = donner l'exemple du Japon VS latin America (comparer mean en Am latine et mean au japon)
 
 # Annex
-Github link: <https://github.com/NilaGo/DataManaProject.git>
 
+Github link: <https://github.com/NilaGo/DataManaProject.git>
