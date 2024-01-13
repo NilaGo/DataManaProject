@@ -7,9 +7,6 @@ author: Gobiraj Nila & Damiche Inès
 echo: false
 ---
 
-Github link: <https://github.com/NilaGo/DataManaProject.git>
-
-
 # Research question
 
 rappeler que ce sont les parlementaires qui votent les lois; rappeler qu'on pourrait étudier le contraire (estce que le dev impacte les femmes ?) mais que c'est pas notre but
@@ -247,7 +244,7 @@ At a significance level of 5%, the variable "Proportion of seats held by women i
 
 ## Does female parliamentarians support women's status?
 
-Now, we want to see if women that have the legislative power tend to favor women's conditions in the society. To illustrate that, we are going to study the impact of the share of female parliamentarians on the Women Business and the Law Index Score because we saw in the correlation matrix that these two variables had a higher correlation coefficient. We also could have used the female participation rate but the correlation coefficient is not really high so a further analysis will not be really useful.
+Now, we want to see if women that have the legislative power tend to favour women's conditions in the society. To illustrate that, we are going to study the impact of the share of female parliamentarians on the Women Business and the Law Index Score because we saw in the correlation matrix that these two variables had a higher correlation coefficient. We also could have used the female participation rate but the correlation coefficient is not really high so a further analysis will not be really useful.
 
 ### Women Business and the Law Index Score Scale
 
@@ -332,11 +329,15 @@ kable(tidy_model4, caption = "Simple Linear Regression Results")
 The regression suggests ...
 
 # Conclusion
+In conclusion, according to our results, female parliamentarians do not seem to have a significant impact on the development of a country and on most of the governmental policies. It is often said that women concentrate more on social and environmental policies because they are more "emotional" but this does not seem to be true or at least there is no evident relationship between these variables. The only "social" variable that seems to be impacted by the share of female parliamentarians is the Women and Business Law Index Score which measures how laws and regulations affect women's economic opportunity. Thus, female parliamentarians have a positive impact on some of the women's conditions but this result has to be hold with a grain of salt since we may have a reverse causality: positive women's conditions can favor the access to political functions for women. Furthermore, our results show us that the national budget reserved to the military expenditure is slightly negatively impacted by the share of female parliamentarians. This means female legislators do not really impact the military spending either. 
 
-rappeler nos conclusions sur les tests etc pas grand chose qui change= pas de raison d'etre reticent envers le fait d'avoir des femmes qui votent les lois = femmes et hommes c'est pareil plutot relie a la
+Based on our results we can make two major general conclusions. On one hand, we can reject the general opinion according to which women legislators favour social and environmental issues. On the other hand, since the gender of the parliamentarians does not have a significant impact on government policies  there is no reason to reject the presence of women in the legislative body.  
+If it is really the case, why are there still countries that have a low share of female parliamentarians ? We saw that the share of female legislators does not depend on the income group, the disparities are more present between the different regions. 
 
+#JE PENSE QU'ON PEUT PAS METTRE CA PCQ DU COUP ON CHERCHE CE QUI IMPACTE LES FEMMES ALORS QUE NOTRE SUJET C'EST CE QUE LES FEMMES IMPACTENT
 As it seems that there is no evident relationship between development and the share of female parliamentarians, we will try to find comparer gdi et hdi pour amener l'idée du Japon (faire graph) les femmes changent
-
 culture = donner l'exemple du Japon VS latin America (comparer mean en Am latine et mean au japon)
 
 # Annex
+Github link: <https://github.com/NilaGo/DataManaProject.git>
+
