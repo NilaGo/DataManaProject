@@ -295,7 +295,7 @@ The correlation coefficient between the proportion of seats of women is close to
 
 From this analysis , we can deduce that more representation of women in national parliaments does not significantly entails more public policies favoring social justice and equality or national defense.
 
-## Women in Parliaments and environmental policies 
+## Women in Parliaments and environmental policies
 
 This section will focus on the impact of more women in legislative institutions on environmental policies by highlighting the correlation between the proportion of seats held by women in national parliament and the PHDI , which we chose as an indicator for the environmental performance of a country . The correlation matrix suggest that the Planetary Pressures- Adjusted Human Development Index and HDI are highly correlated , thus we expect similar conclusions.
 
